@@ -1,0 +1,31 @@
+.about{
+    height: 80vh;
+    width: 100;
+}
+
+.aboutinner{
+    height: 80%;
+    width: 100%;
+    background: url("../aboutbg.svg");
+    margin: 100px auto;
+    position: relative;
+    background-size: cover;
+}
+
+.aboutinner img{
+    width: 32%;
+    float: right;
+    margin: 50px 150px;
+}
+
+.aboutinner div{
+    width: 180px;
+    height: 50px;
+    display: inline-block;
+    text-align: left;
+    background-color: white;
+    padding: 15px;
+    color: #046E1B;
+    margin-top: 240px;
+    border-radius: 10px;
+}

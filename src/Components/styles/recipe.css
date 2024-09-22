@@ -1,0 +1,86 @@
+.recipe{
+    width: 80%;
+    height: 120vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20vh;
+    gap: 30px;
+
+}
+
+.recipeintro{
+    flex-basis: 5%;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    align-items: center;
+}
+
+.recipeintro p{
+    color: #7F7D7D;
+}
+
+.recipeintro button{
+    outline: none;
+    border: none;
+    background-color:#F79F1A ;
+    color: white;
+    flex-basis: 10%;
+    height: 60%;
+    border-radius: 12px;
+}
+
+.recipe .recipebox{
+   width: 80vw;
+   height: 100%;
+   display: grid;
+   grid-template-columns: repeat(5,1fr);
+   grid-template-rows: repeat(auto-fill,1fr);
+}
+
+.recipe .recipebox>div{
+    position: relative;
+    height: 100%;
+}
+.recipe .recipebox>div>div{
+    position: absolute;
+    color: white;
+    display: grid;
+    place-content: center;
+    background-color:none;
+    top: 0;
+    height: 100%;
+    border:none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+.recipe .recipebox>div>div:hover{
+    background-color: rgba(000, 000, 000, .8);
+    cursor: pointer;
+}
+
+.recipe .recipebox>div:hover .recipeimagi .imagine  img{
+    width: 120%;
+    height: 120%;
+    background-color: red;
+}
+.recipe .recipebox img{
+    height: inherit;
+    width: 100% ;
+    transition: 0.4s ease-in-out;
+}
+
+.recipename{
+    opacity: 0;
+    transition: .5s ease-in-out;
+}
+
+ .recipename:hover{
+   opacity: 1;
+}
+

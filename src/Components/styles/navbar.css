@@ -1,0 +1,53 @@
+.navbar{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 15px 0;
+
+}
+ .navbar div{
+    text-align: center;
+    align-items: center;
+ }
+
+ .navbar .logo{
+    display: flex;
+    font-size: 150%;
+    color: #046E1B;
+    font-weight: 700;
+ }
+
+ .navbar .links{
+    display: flex;
+    flex-basis: 40%;
+    justify-content: space-evenly;
+ }
+
+ .navbar .links li{
+    list-style-type: none;
+ }
+
+ .navbar .profile{
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 4%;
+ }
+
+ .navbar .profile div{
+    display: flex;
+    justify-content: center;
+ }
+
+ input{
+   border: 2px solid black;
+   margin-left: 5px;
+   height: 4vh;
+   border-radius: 5px;
+   text-align: center;
+   transition: 1s ease-in-out;
+ }
+
+ .search{
+   cursor: pointer;
+ }

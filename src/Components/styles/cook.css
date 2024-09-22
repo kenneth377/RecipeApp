@@ -1,0 +1,104 @@
+.cook{
+    width: 80vw;
+    height: 100vh;
+    color: #046E1B;
+    overflow: hidden;
+}
+
+.cookbox{
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(20,1fr);
+    padding: 10px;
+    display: grid;
+    height: inherit;
+    grid-gap: 10px;
+}
+
+
+.cookbox>.imagrep{
+    grid-row: span 8;
+    grid-column:span 4;
+}
+.cookbox>.imagrep>img{
+    height: 100%;
+    width: 100%;
+}
+.cookbox>.ingredients{
+    grid-row:9/ span 8;
+    grid-column:span 4;
+    padding: 20px;
+    filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.05));
+    border-radius: 20px;
+    overflow-y: auto;
+    background-color: white;
+}
+
+.cookbox>.ingredients::-webkit-scrollbar{
+    background-color: #046E1B;
+    width: 5px;
+}
+
+.cookbox>.ingredients::-webkit-scrollbar-thumb{
+    background-color: #F79F1A;
+}
+.cookbox>.ingredients>div{
+
+    margin-top: 5px;
+}
+
+.cookbox>.ingredients>div label span{
+    color: #F79F1A;
+}
+.cookbox>.ingredients>div label:hover{
+    cursor: pointer;
+}
+input[type="checkbox"]:checked + label{
+    color:#7F7D7D;
+    text-decoration: line-through;
+}
+
+input[type="checkbox"]:checked + label span{
+    color:#7F7D7D;
+}
+.cookbox>.cookname{
+    grid-row: span 3;
+    grid-column:span 6;
+    font-size: 200%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.cookbox>.cookbtns{
+    grid-column:span 6;
+    grid-row: span 0.5;
+    font-size: 200%;
+    display: flex;
+    place-content: center;
+    margin-top: 20px
+}
+
+.cookbox>.cookinstructions{
+    grid-row: span 13;
+    grid-column: span 6;
+    display:  grid;
+    place-content: center;
+    grid-gap: 10px;
+    filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.05));
+    overflow-y: auto;
+    background-color: white;
+}
+
+.cookbox>.cookinstructions h2{
+    font-style: italic;
+}
+
+
+.cookbox>.cookinstructions::-webkit-scrollbar{
+    background-color: #046E1B;
+    width: 5px;
+}
+
+.cookbox>.cookinstructions::-webkit-scrollbar-thumb{
+    background-color: #F79F1A;
+}

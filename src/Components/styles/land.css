@@ -1,0 +1,51 @@
+
+.landmore{
+    height: 90vh;
+    width: 80%;
+    display:grid;
+    grid-template-columns: 1fr 1.25fr;
+    margin:  auto;
+    align-items: center;
+}
+
+.landmore div:first-child{
+    text-align: left;
+}
+
+.landmore div:first-child h1{
+    font-size: 50px;
+    line-height: 70px;
+}
+
+.landmore div:first-child p{
+    font-size: 16px;
+    line-height: 24px;
+    margin: 10px 0;
+    color: #7F7D7D;
+    font-size: 90%;
+}
+
+.landmore div:first-child p span{
+    color: #F79F1A;
+}
+
+.landmore div:first-child a{
+    background-color: #F79F1A;
+    padding: 15px 40px;
+    display: inline-block;
+    margin-top: 15px;
+    border-radius: 20px;
+    color: white;
+}
+
+.landmore div:nth-child(2){
+    position: absolute;
+
+}
+
+
+.landmore div:nth-child(2) img{
+    width: 80%;
+    position: relative;
+    left: 30vw;
+}

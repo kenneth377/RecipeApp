@@ -1,0 +1,40 @@
+.cta{
+    height: 30vh;
+    width: 80%;
+    margin:auto;
+    background-color: #046E1B;
+    margin-top: 5vh;
+    border-radius: 20px;
+    position: relative;
+    text-align: left;
+    padding: 50px;
+    color: white;
+}
+
+.cta img{
+    position: absolute;
+    bottom: 0;
+    height: 80%;
+    left: 53vw;
+}
+
+.cta h1{
+    width: 60%;
+    font-size: 220%;
+}
+
+.cta .ctabtns{
+    width: 30%;
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cta .ctabtns>div{
+    border-radius: 5px;
+    flex-basis: 45%;
+    height: 100%;
+    background-color: #F79F1A;
+    text-align: center;
+}

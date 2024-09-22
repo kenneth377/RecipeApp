@@ -1,0 +1,67 @@
+.list {
+    width: 90vw;
+    height: auto;
+    overflow-y: auto; 
+    overflow-x: hidden;
+}
+
+.list .listbox {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    padding: 2vh;
+    grid-auto-rows: 200px; 
+    place-content: center;
+}
+
+.list .listbox > div {
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    height: 100%;
+   
+}
+
+.foodlistitem{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.foodlistitem>img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.foodlistitem:hover{
+    cursor: pointer;
+}
+.foodlistitem:hover img{
+    height: 140%;
+    width: 140%;
+}
+.fooditemname{
+    background-color: rgba(0,0,0,.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+    place-content: center;
+    color:white;
+    opacity: 0;
+}
+
+.fooditemname p{
+    font-size: 140%;
+    font-weight: 700;
+}
+
+
+.foodlistitem:hover .fooditemname{
+    opacity: 1;
+   
+}
