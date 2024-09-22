@@ -26,6 +26,16 @@
 
  .navbar .links li{
     list-style-type: none;
+    transition: 0.5s ease-in-out;
+ }
+
+ .navbar .links li:hover{
+   font-size: 110%;
+   cursor: pointer;
+ }
+
+ .navbar .links li:focus{
+   text-decoration: underline;
  }
 
  .navbar .profile{

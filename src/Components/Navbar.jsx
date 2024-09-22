@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import "./styles/navbar.css"
 import {  ImSearch } from 'react-icons/im';
 import { GoPerson } from "react-icons/go";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Navbar() {
   const [isearchable, setIsearchable] = useState(false)
   const [trackinpuval, setTrackinputval] = useState("")
+
+  const navigate = useNavigate()
 
   function showsearchinput(){
     setIsearchable(!isearchable)
@@ -40,14 +43,16 @@ export default function Navbar() {
     })
   }
 
+
+  
  
 
   return (
     <div className='navbar'>
       <div className="logo">Recipedia</div>
       <div className="links">
-        <li>Home</li>
-        <li>Recipe</li>
+        <li onClick={()=>navigate("/")}>Home</li>
+        <li onClick={()=>navigate("/cook")}>Recipe</li>
         <li>Community</li>
         <li>About us</li>
       </div>

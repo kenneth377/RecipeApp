@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './styles/recipe.css';
 import { Foordcont } from '../Foddcontext';
+import { Navcontext } from '../Navigatecontext';
 
 export default function Recipe() {
   
     const fooder = useContext(Foordcont);
+    const navigate = useContext(Navcontext)
 
     return (
         <div className='recipe'>

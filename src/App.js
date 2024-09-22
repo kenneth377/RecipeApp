@@ -1,12 +1,12 @@
 
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Home from './Home';
-import { Router } from 'react-router-dom';
+import { Navigate, Router, useNavigate } from 'react-router-dom';
 
 
 function App() {
-
+ 
   return (
     <div className="App">
       <Home/>

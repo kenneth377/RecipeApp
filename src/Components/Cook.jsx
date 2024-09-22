@@ -3,15 +3,23 @@ import "./styles/cook.css"
 import Navbar from "./Navbar"
 import { TfiYoutube } from 'react-icons/tfi'
 import { CiGlobe } from 'react-icons/ci'
+import { Navcontext } from '../Navigatecontext'
+import { useNavigate, useLocation} from 'react-router-dom'
 
 export default function Cook() {
     const [cookfood,setCookfood] = useState({})
     const [ingredlist, setIngredlist] = useState([])
     const [measurelist, setMeasurelist] = useState([])
     const [instructionlist, setInstructionlist] = useState([])
+    const [hassource, setHassource] = useState(false)
+
+    const navigate = useNavigate()
+
+    const location = useLocation();
+    const { idMeal } = location.state || {};
 
     useEffect(()=>{
-        fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772")
+        fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
       
         .then(
             (response)=>{
@@ -42,13 +50,17 @@ export default function Cook() {
     setMeasurelist(filtermeasurearr)
 
     setInstructionlist(cookfood.strInstructions ? cookfood.strInstructions.split("\n") : []);
-    console.log(instructionlist)
+
+    if(cookfood.strSource){
+        setHassource(true)
+    }
     },[cookfood])
 
 
   return (
+    <Navcontext.Provider value={navigate}>
     <div className='cook'>
-        <Navbar />
+        {/* <Navbar /> */}
         
         <div className="cookbox">
             <div className="imagrep"><img src={cookfood.strMealThumb} al1t="Food image" /></div>
@@ -66,17 +78,18 @@ export default function Cook() {
             <div className="cookname">{cookfood.strMeal}</div>
             <div className="cookbtns">
                 <a href={cookfood.strYoutube} target='blank'><TfiYoutube/></a>
-                <a href=""><CiGlobe/></a>
+                {hassource && <a href={cookfood.strSource}><CiGlobe/></a>}
                 </div>
             <div className="cookinstructions">
                 <h2>Instructions</h2>
                 {
                     instructionlist.map((instruction,index)=>(
-                        <p>{index+1}. &nbsp;{instruction}</p>
+                        <p key={index}>{index+1}. &nbsp;{instruction}</p>
                     ))
                 }
             </div>
         </div>
     </div>
+    </Navcontext.Provider>
   )
 }

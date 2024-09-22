@@ -8,10 +8,14 @@ import Footer from './Components/Footer';
 import Land from './Components/Land';
 import Recipe from './Components/Recipe';
 import { Foordcont } from './Foddcontext';
+import { Navcontext } from './Navigatecontext';
+import { useNavigate } from 'react-router-dom';
 
 
 function Home() {
   const [retdata, setRetdata] = useState(null)
+  
+  const navigate = useNavigate()
 
   useEffect(()=>{
       fetch("https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian")
@@ -21,7 +25,6 @@ function Home() {
             if (!response.ok) {
               throw new Error("Network response was not ok");
             }
-              console.log(response)
               return response.json()
           }
       )
@@ -34,18 +37,15 @@ function Home() {
       })
   },[])
 
-  useEffect(()=>{
-    if(retdata){
-      console.log(retdata.meals)
-    }
-  },[retdata])
 
 
   return (
+    
     <div className="Home">
       {retdata?    
+        <Navcontext.Provider value={navigate}>
       <Foordcont.Provider value={retdata.meals}>
-   
+    
       <Land />
       <Recipe />
       <About />
@@ -53,10 +53,12 @@ function Home() {
       <CTA />
       <Footer />
       
-    </Foordcont.Provider>:
-     <div>hello</div>
+    </Foordcont.Provider>
+    </Navcontext.Provider>:
+     <div>Loading</div>
 }
     </div>
+   
     
   );
 }
