@@ -1,0 +1,54 @@
+.slide{
+    width: 80%;
+    display: flex;
+    place-content: center;
+    margin:auto;
+    flex-direction: column;
+    text-align: center;
+    height: 60vh;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.slide h3{
+    font-size: 300%;
+}
+
+.swiper{
+    height: 40vh;
+    width: 80vw;
+}
+
+.swiper-slide{
+    width: 10vh;
+    height: inherit;
+    display: grid;
+    place-items: center;
+    position: relative;
+    color:white
+}
+
+.swiper-slide img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.swiper-slide>.slidecountryname{
+    background-color: rgba(10,10,10,.6);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.swiper-slide>.slidecountryname>p{
+    font-size: 250%;
+    font-family: cursive;
+}
+
+
+.swiper-pagination-bullet{
+    background-color: red;
+}

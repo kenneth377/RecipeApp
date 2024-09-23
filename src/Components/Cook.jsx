@@ -31,7 +31,7 @@ export default function Cook() {
             }
         )
         .then((data)=>{
-            setCookfood(data.meals[0])
+            setCookfood(data.meals[0])  
         })
         .catch((err)=>{
             console.log(err)

@@ -22,6 +22,13 @@
    
 }
 
+.list .listbox h1{
+    display: grid;
+    place-content: center;
+    font-size: 250%;
+    color: #046E1B;
+}
+
 .foodlistitem{
     width: 100%;
     height: 100%;
@@ -45,7 +52,7 @@
     width: 140%;
 }
 .fooditemname{
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(0,0,0,.8);
     width: 100%;
     height: 100%;
     position: absolute;

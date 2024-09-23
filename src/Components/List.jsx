@@ -1,62 +1,83 @@
-import React, { useState ,useEffect,useContext} from 'react'
-import Navbar from "./Navbar"
-import "./styles/list.css"
-import aboutbg from "./community.svg"
-import { Navcontext } from '../Navigatecontext'
-import { Navigate, useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import "./styles/list.css";
 
 export default function List() {
-    const [catlist,setCatlist] = useState([])
-    const navigate = useNavigate()
+    const [catlist, setCatlist] = useState([]);
+    const [isloading, setIsloading] = useState(true)
+    const [linktype, setLinktype] = useState("www.themealdb.com/api/json/v1/1/filter.php?c=Seafood")
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    function handletocook(id){
-        navigate("/cook", {state: {idMeal: id}})
+    const category = location.state?.category;
+    const link = location.state?.linktype;
 
-    }
-    useEffect(()=>{
-        fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef")
-      
-        .then(
-            (response)=>{
-              if (!response.ok) {
-                throw new Error("Network response was not ok");
-              }
+    useEffect(() => {
+        if (link=="food") {
+            setLinktype(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
+        } 
 
-                return response.json()
-            }
-        )
-        .then((data)=>{
-            setCatlist(data.meals)
-        })
-        .catch((err)=>{
-            console.log(err)
-            return err
-        })
-    },[])
+        else if(link=="country"){
+            setLinktype(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${category}`)
+        }
+        else {
+            console.error("Link not provided, default link will be used.");
+        }
+    }, [link]);
 
-  
-  return (
-    
-    <div className='list'>
-        {/* <Navbar/> */}
-        {catlist.length>0?
-        <div className="listbox">
-            {catlist.map((food) => (
-                    <div className='foodlistitem' key={food.idMeal}>
-                        <img src={food.strMealThumb} alt="fooditem" />
-                        <div className="fooditemname">
-                            <p>{food.strMeal}</p>
-                            <a href="" onClick={(e)=>{
-                                e.preventDefault();
-                                handletocook(food.idMeal)
-                            }}>View Recipe</a>    
-                        </div>
+    useEffect(() => {
+        if (!category) return; 
+        console.log(linktype)
+        setIsloading(true)
+
+        fetch(linktype)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                setCatlist(data.meals || []);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+            .finally(()=>{
+                setIsloading(false)
+            })
+    }, [category,linktype]); 
+
+    const handletocook = (id) => {
+        navigate("/cook", { state: { idMeal: id } });
+    };
+
+    return (
+        <div className='list'>
+            {isloading ? (
+                <div className="loading">Loading, wait a lil...</div>
+            ) : (
+                catlist.length > 0 ? (
+                    <div className="listbox">
+                        <h1>{category}</h1>
+                        {catlist.map((food) => (
+                            <div className='foodlistitem' key={food.idMeal}>
+                                <img src={food.strMealThumb} alt="fooditem" />
+                                <div className="fooditemname">
+                                    <p>{food.strMeal}</p>
+                                    <a href="#" onClick={(e) => {
+                                        e.preventDefault();
+                                        handletocook(food.idMeal);
+                                    }}>View Recipe</a>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                ))
-            }
-        </div>:
-        <div>Page not Found</div>
-}
-    </div>
-  )
+                ) : (
+                    <div>Page not Found</div>
+                )
+            )}
+        </div>
+    );
+    
 }

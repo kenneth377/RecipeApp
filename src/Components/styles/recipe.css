@@ -37,6 +37,7 @@
    display: grid;
    grid-template-columns: repeat(5,1fr);
    grid-template-rows: repeat(auto-fill,1fr);
+   grid-gap: 10px;
 }
 
 .recipe .recipebox>div{
@@ -67,7 +68,6 @@
 .recipe .recipebox>div:hover .recipeimagi .imagine  img{
     width: 120%;
     height: 120%;
-    background-color: red;
 }
 .recipe .recipebox img{
     height: inherit;
@@ -78,6 +78,7 @@
 .recipename{
     opacity: 0;
     transition: .5s ease-in-out;
+    background-color: rgba(000, 000, 000, .8);
 }
 
  .recipename:hover{
