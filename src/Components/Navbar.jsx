@@ -2,45 +2,42 @@ import React, { useState } from 'react'
 import "./styles/navbar.css"
 import {  ImSearch } from 'react-icons/im';
 import { GoPerson } from "react-icons/go";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
+import Lottie from 'lottie-react';
+import logojson from "./logo.json"
 
 
 export default function Navbar() {
   const [isearchable, setIsearchable] = useState(false)
   const [trackinpuval, setTrackinputval] = useState("")
+  const location = useLocation();
 
   const navigate = useNavigate()
 
   function showsearchinput(){
-    setIsearchable(!isearchable)
+    if(location.pathname !=="/list"){
+      setIsearchable(!isearchable)
+    }
+    
   }
 
   function handlechange(e){
     setTrackinputval(e.target.value)
   }
 
+
+
   function handleserach(){
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${trackinpuval}`)
-    
-    .then(
-        (response)=>{
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-            return response.json()
-        }
-    )
-    .then((data)=>{
-        console.log(data)
-    })
-    .catch((err)=>{
-        console.log(err)
-        return err
-    })
-    .finally(()=>{
-      setTrackinputval("")
-      setIsearchable(!isearchable)
-    })
+    // console.log(location)
+    if(trackinpuval && trackinpuval!==""){
+      navigate("/list", {state:{
+        category:trackinpuval,
+        linktype:"foodword"
+    }})
+    setIsearchable(false)
+    setTrackinputval("")
+    }
+   
   }
 
 
@@ -49,7 +46,9 @@ export default function Navbar() {
 
   return (
     <div className='navbar'>
-      <div className="logo">Recipedia</div>
+      <div className="logo">
+        <Lottie className="logolottie" animationData={logojson} loop={true} autoplay={true}></Lottie>
+        Kencipe</div>
       <div className="links">
         <li onClick={()=>navigate("/")}>Home</li>
         <li onClick={()=>navigate("/cook")}>Recipe</li>

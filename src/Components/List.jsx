@@ -13,17 +13,20 @@ export default function List() {
     const link = location.state?.linktype;
 
     useEffect(() => {
-        if (link=="food") {
+        if (link==="food") {
             setLinktype(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
         } 
 
-        else if(link=="country"){
+        else if(link==="country"){
             setLinktype(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${category}`)
+        }
+        else if(link==="foodword"){
+            setLinktype(`https://www.themealdb.com/api/json/v1/1/search.php?s=${category}`)
         }
         else {
             console.error("Link not provided, default link will be used.");
         }
-    }, [link]);
+    }, [link,category]);
 
     useEffect(() => {
         if (!category) return; 
@@ -65,7 +68,7 @@ export default function List() {
                                 <img src={food.strMealThumb} alt="fooditem" />
                                 <div className="fooditemname">
                                     <p>{food.strMeal}</p>
-                                    <a href="#" onClick={(e) => {
+                                    <a href='#' onClick={(e) => {
                                         e.preventDefault();
                                         handletocook(food.idMeal);
                                     }}>View Recipe</a>

@@ -18,6 +18,10 @@
     font-weight: 700;
  }
 
+ .navbar .logo .logolottie{
+   width: 30px;
+   height: 30px;
+ }
  .navbar .links{
     display: flex;
     flex-basis: 40%;
