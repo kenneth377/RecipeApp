@@ -72,9 +72,6 @@ function Home() {
           <Land />
           <Slider arealist={arealist}/>
           <Recipe />
-          <About />
-          <Community />
-          <CTA />
           <Footer />
           
           </Foordcont.Provider>
