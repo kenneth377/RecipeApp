@@ -40,7 +40,7 @@ export default function Slider({ arealist = [] }) {
                 <img src={image ? image.src : comimg} alt={image ? image.alt : 'Default Image'} />
                 {activeIndex === index && (
                   <div className='slidecountryname'>
-                    <p>{area.strArea}</p>
+                   <p style={{ color: 'white' }}>{area.strArea}</p>
                     <a href="" onClick={(e) => {
                       e.preventDefault();
                       navigate("/list", { state: { category: area.strArea, linktype: "country" } });

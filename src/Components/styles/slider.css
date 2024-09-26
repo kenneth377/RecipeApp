@@ -54,11 +54,22 @@
 }
 
 @media(max-width:600px){
+    .slide{
+        overflow-x: hidden;
+    }
     .slide h3{
         font-size: 150%;
     }
     .slide p{
         font-size: 70%;
         color: #7F7D7D;
+    }
+
+    .swiper{
+        /* background-color: red; */
+        width: 100vw;
+        /* height: 70vh; */
+        /* display: grid;
+        place-content: center; */
     }
 }

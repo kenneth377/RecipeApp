@@ -84,3 +84,9 @@
    opacity: 1;
 }
 
+
+@media(max-width:600px){
+    .recipe{
+        /* margin: 0; */
+    }
+}
