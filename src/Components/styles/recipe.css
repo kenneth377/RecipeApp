@@ -1,6 +1,6 @@
 .recipe{
     width: 80%;
-    height: 120vh;
+    /* height: 120vh; */
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -33,10 +33,10 @@
 
 .recipe .recipebox{
    width: 80vw;
-   height: 100%;
+   height: 100vh;
    display: grid;
    grid-template-columns: repeat(5,1fr);
-   grid-template-rows: repeat(auto-fill,1fr);
+   grid-template-rows: repeat(auto-fill,200px);
    grid-gap: 10px;
 }
 
@@ -86,7 +86,10 @@
 
 
 @media(max-width:600px){
-    .recipe{
+    .recipe .recipebox{
         /* margin: 0; */
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+        height: 140vh;
     }
 }

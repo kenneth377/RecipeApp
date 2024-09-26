@@ -18,7 +18,7 @@ export default function Slider({ arealist = [] }) {
   return (
     <div className="slide">
       <h3>Global Flavors: A Culinary Journey</h3>
-      <p>Embark on a delicious adventure exploring vibrant cuisines from around the world!</p>
+      <p>Embark on a delicious adventure exploring vibrant cuisines from around the world! Just Swipe along</p>
       {
         issmallsize ? 
         <Swiper

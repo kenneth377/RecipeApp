@@ -58,18 +58,15 @@
         overflow-x: hidden;
     }
     .slide h3{
-        font-size: 150%;
+        font-size: 200%;
     }
     .slide p{
-        font-size: 70%;
+        font-size: 80%;
         color: #7F7D7D;
     }
 
     .swiper{
-        /* background-color: red; */
         width: 100vw;
-        /* height: 70vh; */
-        /* display: grid;
-        place-content: center; */
+        margin-top: 2vh;
     }
 }
