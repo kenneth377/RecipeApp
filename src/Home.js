@@ -89,7 +89,6 @@ function Home() {
               <Land />
               <Slider arealist={arealist}/>
               <Recipe />
-              <Footer />
             </Screensize.Provider>
           </Foordcont.Provider>
         </Navcontext.Provider>:
