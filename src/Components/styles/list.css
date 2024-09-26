@@ -48,8 +48,8 @@
     cursor: pointer;
 }
 .foodlistitem:hover img{
-    height: 140%;
-    width: 140%;
+   
+    transform: scale(1.5);
 }
 .fooditemname{
     background-color: rgba(0,0,0,.8);

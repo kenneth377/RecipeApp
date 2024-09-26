@@ -66,8 +66,7 @@
 }
 
 .recipe .recipebox>div:hover .recipeimagi .imagine  img{
-    width: 120%;
-    height: 120%;
+    transform: scale(1.5);
 }
 .recipe .recipebox img{
     height: inherit;

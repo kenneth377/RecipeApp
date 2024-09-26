@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import "./styles/list.css";
+import Lottie from 'lottie-react';
+import logojson from "./logo.json"
 
 export default function List() {
     const [catlist, setCatlist] = useState([]);
@@ -57,6 +59,9 @@ export default function List() {
 
     return (
         <div className='list'>
+               <div className="logo">
+        <Lottie className="logolottie" animationData={logojson} loop={true} autoplay={true}></Lottie>
+        Kencipe</div>
             {isloading ? (
                 <div className="loading">Loading, wait a lil...</div>
             ) : (

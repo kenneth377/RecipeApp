@@ -11,14 +11,14 @@
     align-items: center;
  }
 
- .navbar .logo{
+  .logo{
     display: flex;
     font-size: 150%;
     color: #046E1B;
     font-weight: 700;
  }
 
- .navbar .logo .logolottie{
+ .logo .logolottie{
    width: 30px;
    height: 30px;
  }
@@ -65,3 +65,37 @@
  .search{
    cursor: pointer;
  }
+
+
+
+ @media(max-width:600px){
+  .smallnav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .naver{
+    display: flex;
+    align-items: center;
+   
+  }
+
+  .actuallinks{
+    background-color: #046E1B;
+    position: absolute;
+    padding: 20px;
+    top: 5vh;
+    left: 70%;
+    z-index: 2;
+  }
+
+  .actuallinks li{
+    list-style-type: none;
+    color: #F79F1A;
+    margin-top: 5px;
+
+  }
+ }
+

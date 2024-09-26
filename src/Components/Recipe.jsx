@@ -24,7 +24,6 @@ export default function Recipe() {
                     <h1>Discover, Create, Share</h1>
                     <p>Dive into a world of flavors with our curated categories of foods</p>
                 </div>
-                <button>See All</button>
             </div>
             
                 <div className="recipebox" >

@@ -5,6 +5,9 @@ import { TfiYoutube } from 'react-icons/tfi'
 import { CiGlobe } from 'react-icons/ci'
 import { Navcontext } from '../Navigatecontext'
 import { useNavigate, useLocation} from 'react-router-dom'
+import Lottie from 'lottie-react';
+import logojson from "./logo.json"
+
 
 export default function Cook() {
     const [cookfood,setCookfood] = useState({})
@@ -61,6 +64,9 @@ export default function Cook() {
     <Navcontext.Provider value={navigate}>
     <div className='cook'>
         {/* <Navbar /> */}
+        <div className="logo">
+        <Lottie className="logolottie" animationData={logojson} loop={true} autoplay={true}></Lottie>
+        Kencipe</div>
         
         <div className="cookbox">
             <div className="imagrep"><img src={cookfood.strMealThumb} al1t="Food image" /></div>

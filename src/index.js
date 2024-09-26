@@ -12,7 +12,6 @@ root.render(
   <React.StrictMode>
     <>
      <Router>
-     <Navbar/>
       <Routes>
       <Route path="/" element={<App />} />
       <Route path="/list" element={<List />} />

@@ -11,13 +11,29 @@ import { Foordcont } from './Foddcontext';
 import { Navcontext } from './Navigatecontext';
 import { useNavigate } from 'react-router-dom';
 import Slider from './Components/Slider';
+import Navbar from './Components/Navbar';
+import { Screensize } from './screen';
 
 
 function Home() {
   const [retdata, setRetdata] = useState(null)
   const [arealist, setArealist] = useState(null)
-
+  const [ismobile, setIsmobile] = useState(false)
   const navigate = useNavigate()
+
+
+  function checkScreenSize() {
+    if (window.innerWidth <= 600) {
+      setIsmobile(true)
+    } else {
+      setIsmobile(false)
+    }
+  }
+  useEffect(()=>{
+    window.addEventListener("resize", checkScreenSize)
+    checkScreenSize()
+  },[])
+  
 
   useEffect(()=>{
       fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
@@ -68,12 +84,13 @@ function Home() {
       {retdata?    
         <Navcontext.Provider value={navigate}>
           <Foordcont.Provider value={retdata}>
-        
-          <Land />
-          <Slider arealist={arealist}/>
-          <Recipe />
-          <Footer />
-          
+            <Screensize.Provider value={ismobile}>
+              <Navbar />
+              <Land />
+              <Slider arealist={arealist}/>
+              <Recipe />
+              <Footer />
+            </Screensize.Provider>
           </Foordcont.Provider>
         </Navcontext.Provider>:
      <div>Loading</div>
