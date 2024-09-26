@@ -17,8 +17,6 @@ export default function Navbar() {
 
   const screensize = useContext(Screensize)
   const location = useLocation();
-
-  console.log(screensize)
   const navigate = useNavigate()
 
   function showsearchinput(){

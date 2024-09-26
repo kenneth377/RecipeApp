@@ -85,9 +85,9 @@
   .actuallinks{
     background-color: #046E1B;
     position: absolute;
-    padding: 20px;
+    padding: 30px;
     top: 5vh;
-    left: 70%;
+    left: 64%;
     z-index: 2;
   }
 

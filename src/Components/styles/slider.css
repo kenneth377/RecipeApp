@@ -52,3 +52,13 @@
 .swiper-pagination-bullet{
     background-color: red;
 }
+
+@media(max-width:600px){
+    .slide h3{
+        font-size: 150%;
+    }
+    .slide p{
+        font-size: 70%;
+        color: #7F7D7D;
+    }
+}
