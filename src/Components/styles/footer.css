@@ -1,12 +1,3 @@
-/* .footer{
-    width: 100%;
-    height: 40vh;
-    background-color: red;
-    clip-path: url(#myClip);
-    transition: 0.5s ease-in-out;
-} */
-
-
 *{
     margin: 0;
     padding: 0;
@@ -63,4 +54,28 @@
     flex-direction: column;
     justify-content: space-between;
     height: 45%;
+}
+
+
+@media(max-width:600px){
+
+    .footer{
+        align-items: baseline;
+    }
+    .footerinner{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .footerinner p{
+        font-size: 80%;
+    }
+
+    .footerlinks{
+        flex-direction: row;
+        justify-content: space-between;
+        width: 70%;
+    }
 }

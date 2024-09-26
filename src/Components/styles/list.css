@@ -60,6 +60,8 @@
     place-content: center;
     color:white;
     opacity: 0;
+    place-items: center;
+    text-align: center;
 }
 
 .fooditemname p{
@@ -71,4 +73,15 @@
 .foodlistitem:hover .fooditemname{
     opacity: 1;
    
+}
+
+
+@media(max-width:600px){
+    .list{
+        display: grid;
+        place-items: center;
+    }
+    .foodlistitem{
+        width: 120%;
+    }
 }
